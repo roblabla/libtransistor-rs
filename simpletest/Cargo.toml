@@ -1,0 +1,12 @@
+[package]
+name = "simpletest"
+version = "0.1.0"
+authors = ["roblabla <unfiltered@roblab.la>"]
+
+[[bin]]
+name = "simpletest"
+path = "src/main.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+libtransistor-sys = { path = "../libtransistor-sys" }

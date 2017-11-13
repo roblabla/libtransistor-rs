@@ -1,0 +1,13 @@
+[package]
+authors = ["roblabla <unfiltered@roblab.la>"]
+name = "libtransistor-sys"
+version = "0.0.0"
+
+[build-dependencies]
+
+[build-dependencies.bindgen]
+git = "https://github.com/rust-lang-nursery/rust-bindgen"
+optional = false
+
+[dependencies]
+cty = "0.1.5"

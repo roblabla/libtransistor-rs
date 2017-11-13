@@ -1,0 +1,40 @@
+{
+  "abi-blacklist": [
+    "stdcall",
+    "fastcall",
+    "vectorcall",
+    "thiscall",
+    "win64",
+    "sysv64"
+  ],
+  "arch": "aarch64",
+  "data-layout": "e-m:e-i8:8:32-i16:16:32-i64:64-i128:128-n32:64-S128",
+  "env": "newlib",
+  "has-elf-tls": false,
+  "has-rpath": true,
+  "linker-flavor": "ld",
+  "llvm-target": "aarch64-unknown-none",
+  "max-atomic-width": 128,
+  "position-independent-executables": true,
+  "os": "horizon",
+  "pre-link-args": {
+    "gcc": [
+      "-Wl,--as-needed",
+      "-Wl,-z,noexecstack"
+    ],
+    "ld": [
+      "-Tlink.T"
+    ]
+  },
+  "relro-level": "full",
+  "target-endian": "little",
+  "target-c-int-width": "32",
+  "target-pointer-width": "64",
+  "vendor": "nintendo",
+  "cpu": "cortex-a53",
+  "eliminate-frame-pointer": false,
+  "panic-strategy": "abort",
+  "executables": true,
+  "dynamic-linking": true,
+  "linker": "ld.lld"
+}

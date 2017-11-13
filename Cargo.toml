@@ -1,0 +1,6 @@
+[workspace]
+
+members = ["libtransistor-sys", "libtransistor", "simpletest"]
+
+[patch.crates-io]
+bindgen = { path = "../rust-bindgen" }

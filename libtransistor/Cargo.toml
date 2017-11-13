@@ -1,0 +1,6 @@
+[package]
+name = "libtransistor"
+version = "0.0.0"
+authors = ["roblabla <unfiltered@roblab.la>"]
+
+[dependencies]
