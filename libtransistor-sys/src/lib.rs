@@ -1,10 +1,14 @@
-#![feature(lang_items)]
+#![feature(lang_items, alloc_system, global_allocator, allocator_api)]
 #![no_std]
 
 extern crate cty;
+extern crate alloc_system;
 
 include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 //include!("bindings.rs");
+
+#[global_allocator]
+static ALLOCATOR: alloc_system::System = alloc_system::System;
 
 #[lang = "start"]
 unsafe fn start(main_ptr: *const u8, _argc: isize, _argv: *const *const u8) -> isize {

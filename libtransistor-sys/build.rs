@@ -17,6 +17,7 @@ fn main() {
     let dir = env::var("CARGO_MANIFEST_DIR").unwrap();
     println!("cargo:rustc-link-lib=static=transistor.nro");
     println!("cargo:rustc-link-search=native={}/libtransistor/build/lib", dir);
+    println!("cargo:rustc-link-search=native={}/libtransistor/newlib/aarch64-none-switch/newlib", dir);
 
     let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());
 
