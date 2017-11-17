@@ -13,6 +13,13 @@ fn main() {
     if !status.success() {
         panic!("Make failed");
     }
+    let status = Command::new("make")
+        .arg("newlib/aarch64-none-switch/newlib/libc.a")
+        .current_dir("libtransistor")
+        .status().unwrap();
+    if !status.success() {
+        panic!("Make failed");
+    }
 
     let dir = env::var("CARGO_MANIFEST_DIR").unwrap();
     println!("cargo:rustc-link-lib=static=transistor.nro");
