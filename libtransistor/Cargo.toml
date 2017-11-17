@@ -1,6 +1,10 @@
 [package]
+authors = ["roblabla <unfiltered@roblab.la>"]
 name = "libtransistor"
 version = "0.0.0"
-authors = ["roblabla <unfiltered@roblab.la>"]
 
 [dependencies]
+
+[dependencies.libtransistor-sys]
+optional = false
+path = "../libtransistor-sys/"
