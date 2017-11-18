@@ -1,8 +1,7 @@
-#![feature(lang_items, alloc, alloc_system, global_allocator, allocator_api)]
-#![no_std]
-
+#![feature(lang_items, alloc, global_allocator, allocator_api)]
+#![no_std] 
 extern crate alloc;
-extern crate alloc_system;
+extern crate ralloc;
 extern crate libtransistor_sys;
 
 use libtransistor_sys::*;
@@ -34,7 +33,7 @@ pub extern fn panic_fmt(msg: ::core::fmt::Arguments, file: &'static str, line: u
 
 // And the allocator
 #[global_allocator]
-static ALLOCATOR: alloc_system::System = alloc_system::System;
+static ALLOCATOR: ralloc::Allocator = ralloc::Allocator;
 
 
 #[cfg(test)]

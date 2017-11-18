@@ -4,3 +4,6 @@ members = ["libtransistor-sys", "libtransistor", "simpletest"]
 
 [patch.crates-io]
 bindgen = { path = "../rust-bindgen" }
+ralloc = { git = "https://github.com/roblabla/ralloc" }
+ralloc_shim = { git = "https://github.com/roblabla/ralloc" }
+libtransistor-sys = { path = "libtransistor-sys" }
