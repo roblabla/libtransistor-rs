@@ -34,10 +34,12 @@ fn main() {
     unsafe {
         let mut thread = 0;
         svcOutputDebugString(to_output.as_bytes_mut().as_mut_ptr(), to_output.len() as u64);
-        /*handle_res!(svcCreateThread(&mut thread, Some(thread_main), 0, newstack as *mut _, 0, -2));
-        handle_res!(svcStartThread(thread));*/
+        handle_res!(svcCreateThread(&mut thread, Some(thread_main), 0, newstack.as_mut_ptr() as _, 0, -2));
+        core::mem::forget(newstack);
+        handle_res!(svcStartThread(thread));
 
         // TODO: This should be a const ptr no ?
         svcOutputDebugString(to_output.as_bytes_mut().as_mut_ptr(), to_output.len() as u64);
+        loop { svcSleepThread(10); }
     }
 }
