@@ -1,3 +1,7 @@
 [target.aarch64-nintendo-horizon-newlib.dependencies]
 alloc = {}
 alloc_system = {}
+std = {}
+
+#[target.aarch64-nintendo-horizon-newlib.dependencies.libtransistor-sys]
+#path = "../libtransistor-sys"

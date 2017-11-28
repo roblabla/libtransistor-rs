@@ -34,7 +34,6 @@
   "cpu": "cortex-a53",
   "eliminate-frame-pointer": false,
   "panic-strategy": "abort",
-  "target-family": "unix",
   "executables": true,
   "dynamic-linking": true,
   "linker": "ld.lld"

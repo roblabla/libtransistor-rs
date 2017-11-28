@@ -5,6 +5,10 @@ version = "0.1.0"
 
 [dependencies]
 
-[dependencies.libtransistor]
+# For now, we build against libtransistor-sys to find the libc and stuff.
+# Eventually, the plan will be to have our stdlib in a nice standalone
+# repository, and be selfcontained (e.g. link the libc itself). Then the user
+# will just have to put it as a git dep in his Xargo.toml.
+[dependencies.libtransistor-sys]
 optional = false
-path = "../libtransistor"
+path = "../libtransistor-sys"
