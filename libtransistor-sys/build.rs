@@ -7,24 +7,19 @@ use std::path::PathBuf;
 
 fn main() {
     let status = Command::new("make")
-        .arg("build/lib/libtransistor.nro.a")
         .current_dir("libtransistor")
         .status().unwrap();
     if !status.success() {
         panic!("Make failed");
     }
-    let status = Command::new("make")
-        .arg("newlib/aarch64-none-switch/newlib/libc.a")
-        .current_dir("libtransistor")
-        .status().unwrap();
-    if !status.success() {
-        panic!("Make failed");
-    }
-
     let dir = env::var("CARGO_MANIFEST_DIR").unwrap();
     println!("cargo:rustc-link-lib=static=transistor.nro");
     println!("cargo:rustc-link-lib=static=c");
+    println!("cargo:rustc-link-lib=static=ssp");
+    println!("cargo:rustc-link-lib=static=clang_rt.builtins-aarch64");
     println!("cargo:rustc-link-search=native={}/libtransistor/build/lib", dir);
+    println!("cargo:rustc-link-search=native={}/libtransistor/build/compiler-rt/lib/linux", dir);
+    println!("cargo:rustc-link-search=native={}/libtransistor/libssp", dir);
     println!("cargo:rustc-link-search=native={}/libtransistor/newlib/aarch64-none-switch/newlib", dir);
 
     let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());
