@@ -4,7 +4,9 @@ name = "libtransistor-sys"
 version = "0.0.0"
 
 [build-dependencies]
-bindgen = "0.31.3"
+bindgen = {
+	git = "https://github.com/rust-lang-nursery/rust-bindgen"
+}
 
 [dependencies]
 cty = "0.1.5"
