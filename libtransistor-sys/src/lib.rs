@@ -1,6 +1,6 @@
-#![crate_type = "rlib"]
+//#![crate_type = "rlib"]
 #![no_std]
-
+#![cfg_attr(feature = "libc", feature(libc))]
 #[cfg(not(feature = "libc"))]
 extern crate cty;
 #[cfg(feature = "libc")]
