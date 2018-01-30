@@ -8,33 +8,27 @@
     "sysv64"
   ],
   "arch": "aarch64",
+  "crt-static-default": true,
+  "crt-static-respected": true,
   "data-layout": "e-m:e-i8:8:32-i16:16:32-i64:64-i128:128-n32:64-S128",
+  "dynamic-linking": false,
   "env": "newlib",
+  "executables": true,
   "has-elf-tls": false,
-  "has-rpath": true,
+  "has-rpath": false,
   "linker-flavor": "ld",
   "llvm-target": "aarch64-unknown-none",
   "max-atomic-width": 128,
-  "position-independent-executables": true,
   "os": "horizon",
+  "position-independent-executables": true,
   "pre-link-args": {
-    "gcc": [
-      "-Wl,--as-needed",
-      "-Wl,-z,noexecstack"
-    ],
     "ld": [
       "-Tlink.T"
     ]
   },
   "relro-level": "full",
-  "target-endian": "little",
   "target-c-int-width": "32",
+  "target-endian": "little",
   "target-pointer-width": "64",
-  "vendor": "nintendo",
-  "cpu": "cortex-a53",
-  "eliminate-frame-pointer": false,
-  "panic-strategy": "abort",
-  "executables": true,
-  "dynamic-linking": true,
-  "linker": "ld.lld"
+  "vendor": "nintendo"
 }

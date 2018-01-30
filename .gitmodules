@@ -1,3 +1,3 @@
 [submodule "libtransistor-sys/libtransistor"]
 	path = libtransistor-sys/libtransistor
-	url = https://github.com/roblabla/libtransistor
+	url = https://github.com/reswitched/libtransistor
